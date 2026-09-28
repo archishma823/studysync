@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f7f9fc">
+  <link rel="stylesheet" href="a.css">
+  <title>StudySync | Your study command center</title>
+</head>
+<body>
+  <div class="onboarding-screen" id="onboardingScreen" hidden></div>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar" aria-label="Main navigation">
+      <a class="brand" href="#dashboard" data-view="dashboard" aria-label="StudySync dashboard"><span class="brand-mark">S</span><span>StudySync</span></a>
+      <div class="sidebar-label">Workspace</div>
+      <nav class="side-nav">
+        <a href="#dashboard" data-view="dashboard" class="nav-item active"><span class="nav-icon">⌂</span>Dashboard</a>
+        <a href="#planner" data-view="planner" class="nav-item"><span class="nav-icon">▦</span>Planner</a>
+        <a href="#goals" data-view="goals" class="nav-item"><span class="nav-icon">◎</span>Goals</a>
+        <a href="#subjects" data-view="subjects" class="nav-item"><span class="nav-icon">◈</span>Subjects</a>
+        <a href="#focus" data-view="focus" class="nav-item"><span class="nav-icon">◷</span>Focus</a>
+        <a href="#progress" data-view="progress" class="nav-item"><span class="nav-icon">↗</span>Progress</a>
+      </nav>
+      <div class="sidebar-bottom"><div class="sidebar-label">Account</div><a href="#profile" data-view="profile" class="nav-item"><span class="avatar avatar-small" data-profile-initials>SS</span>Profile</a><div class="sidebar-tip"><span class="tip-icon">✦</span><div><strong>Keep your rhythm</strong><small>2 more days to beat your streak</small></div></div></div>
+    </aside>
+    <main class="main-content">
+      <header class="topbar"><button class="icon-button mobile-menu" id="menuButton" aria-label="Open navigation">☰</button><div class="breadcrumb"><span>Workspace</span><b>/</b><strong id="pageTitle">Dashboard</strong></div><div class="topbar-actions"><button class="icon-button" id="notificationButton" aria-label="View notifications">♢<span class="notification-dot"></span></button><button class="profile-chip" data-view="profile"><span class="avatar" data-profile-initials>SS</span><span class="profile-name" data-profile-name>StudySync learner</span><span class="chevron">⌄</span></button></div></header>
+      <div class="view-container" id="appView" aria-live="polite"></div>
+    </main>
+  </div>
+  <nav class="bottom-nav" aria-label="Mobile navigation"><a href="#dashboard" data-view="dashboard" class="nav-item active"><span class="nav-icon">⌂</span>Home</a><a href="#planner" data-view="planner" class="nav-item"><span class="nav-icon">▦</span>Plan</a><a href="#focus" data-view="focus" class="nav-item"><span class="nav-icon">◷</span>Focus</a><a href="#progress" data-view="progress" class="nav-item"><span class="nav-icon">↗</span>Progress</a></nav>
+  <div class="modal-backdrop" id="modalBackdrop" hidden><section class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><div class="modal-header"><div><span class="eyebrow" id="modalEyebrow">New task</span><h2 id="modalTitle">Add a study task</h2></div><button class="icon-button" id="closeModal" aria-label="Close dialog">×</button></div><form id="taskForm"><input type="hidden" id="taskId"><label>Task name<input id="taskName" required placeholder="e.g. Review normalization" autocomplete="off"></label><div class="form-grid"><label>Subject<select id="taskSubject"></select></label><label>Duration<select id="taskDuration"><option value="25">25 min</option><option value="45" selected>45 min</option><option value="60">60 min</option><option value="90">90 min</option></select></label></div><div class="form-grid"><label>Priority<select id="taskPriority"><option value="high">High priority</option><option value="medium" selected>Medium priority</option><option value="low">Low priority</option></select></label><label>Difficulty<select id="taskDifficulty"><option value="easy">Easy</option><option value="medium" selected>Medium</option><option value="hard">Hard</option></select></label></div><label>Date<input type="date" id="taskDate" required></label><div class="modal-actions"><button type="button" class="button ghost" id="cancelModal">Cancel</button><button type="submit" class="button primary">Save task</button></div></form></section></div>
+  <div class="toast-region" id="toastRegion" aria-live="polite"></div>
+  <script type="module" src="app.js"></script>
+</body>
+</html>
